@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // URL pro stažení CSV dat (Google Sheets Export)
-    const csvUrl = 'https://docs.google.com/spreadsheets/d/1z6RZsAZC8hVF5W9g4F2NOdpuOSAKHI9LJMrB6TYwzIQ/export?format=csv';
+    // URL pro stažení CSV dat (Google Sheets Export přes gviz kvůli CORS)
+    const csvUrl = 'https://docs.google.com/spreadsheets/d/1z6RZsAZC8hVF5W9g4F2NOdpuOSAKHI9LJMrB6TYwzIQ/gviz/tq?tqx=out:csv';
 
     const loader = document.getElementById('loader');
     const contentDiv = document.getElementById('content');
@@ -24,14 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Helper: Mapování zkratek na hezčí názvy (pokud jsou k dispozici, jinak zůstane původní)
-    const categoryNames = {
-        'VYT': 'Výpočetní technika (VYT)',
-        'STT, KOM': 'Strojírenství (STT, KOM)',
-        'SPS, MEC, CAD': 'Strojírenství (SPS, MEC, CAD)',
-        'MAT': 'Matematika (MAT)',
-        'ELE': 'Elektrotechnika (ELE)',
-        'CNC': 'Programování CNC (CNC)'
-    };
+    const categoryNames = {};
 
     let allItems = [];
 
