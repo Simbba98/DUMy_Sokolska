@@ -1,0 +1,1 @@
+Webová stránka která slouží jako rozcestník mezi digitálními výukovými materiály ze sokolské. Vzhledem k tomu že škola původní stránku chce zrušit vše jsem zazálohoval na Google drive a udělal přehledný web kde jsou jednotlivé materiály dostupné. Vše je dostupné na https://simbba98.github.io/DUMy_Sokolska/ Časem si to plánuji dát na vlastní doménu.
