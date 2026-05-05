@@ -181,7 +181,7 @@ nav a:hover {
 }
 
 .card-link {
-    display: inline-block;
+    display: block;
     padding: 0.4rem 0.8rem;
     background: var(--primary-color);
     color: white;
@@ -195,6 +195,40 @@ nav a:hover {
 
 .card-link:hover {
     background: var(--primary-hover);
+}
+
+.attachments-list {
+    margin-top: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border-top: 1px solid var(--border-color);
+    padding-top: 0.8rem;
+}
+
+.attachment-link {
+    font-size: 0.85rem;
+    color: var(--text-color);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 0.4rem;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 6px;
+    transition: background 0.3s ease;
+    word-break: break-all;
+}
+
+body.dark-mode .attachment-link {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.attachment-link:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .attachment-link:hover {
+    background: rgba(255, 255, 255, 0.1);
 }
 
 /* Footer & Iframe */
