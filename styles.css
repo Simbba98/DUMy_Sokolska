@@ -368,102 +368,103 @@ body.dark-mode .btn-secondary:hover {
 
 /* Classic View Overrides */
 body.classic-view {
-    font-family: Arial, sans-serif;
-    background: white;
-    color: black;
+    font-family: "Trebuchet MS", Tahoma, "Lucida Sans Unicode", sans-serif;
+    background: #ECECEC;
+    color: #323A40;
 }
 
 body.classic-view .glass-header,
 body.classic-view .glass-footer {
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
-    background: #f0f0f0;
+    background: transparent;
     border: none;
-    border-bottom: 2px solid #ccc;
+    box-shadow: none;
+    padding: 1rem;
+    margin: 0;
+}
+
+body.classic-view .container {
+    max-width: 1200px;
+    margin: 1em auto;
+    padding: 1em;
+    border: 1px ridge #87CEFA;
+    background: #F5F5F5;
 }
 
 body.classic-view .category-section {
-    background: transparent;
-    box-shadow: none;
-    border: none;
-    padding: 0;
+    background: white;
+    border: 1px ridge #87CEFA;
+    padding: 0.2em;
     border-radius: 0;
     margin-bottom: 2rem;
+    box-shadow: none;
 }
 
 body.classic-view .category-title {
-    background: #007bff;
-    color: white;
-    padding: 5px 10px;
-    font-size: 14px;
+    border: thin inset #F0F8FF;
+    padding: 0.2em;
+    color: #F5F5F5;
+    background: #1E90FF;
+    font-weight: bold;
+    font-size: 1em;
+    line-height: 110%;
     margin: 0 0 10px 0;
-    text-transform: uppercase;
+    text-transform: none;
 }
 
 body.classic-view .subcategory-title {
-    font-size: 12px;
+    font-size: 1em;
     font-weight: bold;
-    color: #333;
+    color: #323A40;
     border: none;
     padding: 0;
-    margin: 0 0 5px 0;
+    margin: 10px 0;
 }
 
 body.classic-view .category-content {
-    column-count: 3;
-    column-gap: 20px;
-    padding: 0 10px;
-}
-
-@media (max-width: 900px) {
-    body.classic-view .category-content {
-        column-count: 2;
-    }
-}
-@media (max-width: 600px) {
-    body.classic-view .category-content {
-        column-count: 1;
-    }
-}
-
-body.classic-view .subcategory-group {
-    break-inside: avoid-column;
-    page-break-inside: avoid;
-    margin-bottom: 15px;
+    padding: 0;
 }
 
 body.classic-view .grid-container {
-    display: block;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 0;
+}
+
+@media (max-width: 800px) {
+    body.classic-view .grid-container {
+        grid-template-columns: 1fr;
+    }
 }
 
 body.classic-view .card {
     background: transparent;
     box-shadow: none;
     border: none;
-    padding: 2px 0;
+    padding: 4px 8px;
     margin: 0;
     border-radius: 0;
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 35% 65%;
+    gap: 10px;
     align-items: center;
-    gap: 5px;
 }
 
 body.classic-view .card:hover {
     transform: none;
     box-shadow: none;
+    background: transparent;
 }
 
 body.classic-view .card-title {
-    font-size: 11px;
+    font-size: 0.9em;
     font-weight: normal;
     margin: 0;
-    color: #555;
-    flex: 1;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    color: #323A40;
+    font-family: Arial, Helvetica, sans-serif;
+    grid-column: 2;
+    grid-row: 1;
 }
 
 body.classic-view .card-subtitle {
@@ -471,39 +472,51 @@ body.classic-view .card-subtitle {
 }
 
 body.classic-view .card-link {
-    display: inline;
+    grid-column: 1;
+    grid-row: 1;
     padding: 0;
     background: transparent;
-    color: #0000ee;
+    color: #4169E1;
     text-decoration: underline;
-    font-size: 11px;
-    font-weight: normal;
+    font: 0.9em Arial, Helvetica, sans-serif;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 body.classic-view .card-link:hover {
-    color: #551a8b;
+    color: #1E90ff;
+    background: #f5f5f5;
+    text-decoration: none;
+}
+
+body.classic-view .card > div {
+    display: contents; /* Allows children to participate in the grid directly */
 }
 
 body.classic-view .attachments-list {
     margin: 0;
     padding: 0;
     border: none;
-    display: inline-flex;
-    flex-direction: row;
-    gap: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    grid-column: 1 / span 2;
 }
 
 body.classic-view .attachment-link {
-    font-size: 11px;
-    padding: 0;
+    font-size: 0.9em;
+    padding: 0 0 0 10px;
     background: transparent;
-    color: #0000ee;
+    color: #4169E1;
     text-decoration: underline;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body.classic-view .attachment-link:hover {
-    background: transparent;
-    color: #551a8b;
+    background: #f5f5f5;
+    color: #1E90ff;
+    text-decoration: none;
 }
 
 /* Theme Toggle Button */
