@@ -82,7 +82,7 @@ nav ul {
 
 nav a {
     text-decoration: none;
-    color: #000;
+    color: var(--text-color);
     font-weight: 600;
     transition: color 0.3s ease;
     white-space: nowrap;
@@ -147,10 +147,22 @@ nav a:hover {
 }
 
 /* Cards Grid */
-.cards-grid {
+.grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
+}
+
+@media (max-width: 900px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
 }
 
 .card {
@@ -388,6 +400,14 @@ body.classic-view .glass-footer {
     box-shadow: none;
     padding: 1rem;
     margin: 0;
+}
+
+body.classic-view nav a {
+    color: #000;
+}
+
+body.classic-view #themeToggle {
+    display: none;
 }
 
 body.classic-view .container {
