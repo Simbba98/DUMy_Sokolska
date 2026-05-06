@@ -404,7 +404,8 @@ body.classic-view .glass-footer {
     z-index: 100;
 }
 
-body.classic-view nav a {
+body.classic-view nav a,
+body.classic-view .icon-btn {
     color: #000;
 }
 
