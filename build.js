@@ -165,7 +165,11 @@ function processData(csvText) {
         categories[cat][subCat].push(item);
     });
 
-    const sortedCats = Object.keys(categories).sort((a, b) => a.localeCompare(b, 'cs'));
+    const sortedCats = Object.keys(categories).sort((a, b) => {
+        if (a.toUpperCase() === 'OSTATNÍ' || a.toUpperCase() === 'OSTATNÍ SOUBORY') return 1;
+        if (b.toUpperCase() === 'OSTATNÍ' || b.toUpperCase() === 'OSTATNÍ SOUBORY') return -1;
+        return a.localeCompare(b, 'cs');
+    });
     let navHtml = '';
     let sectionsHtml = '';
 
