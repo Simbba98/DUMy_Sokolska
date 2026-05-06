@@ -560,22 +560,61 @@ body.classic-view .attachment-link:hover {
     text-decoration: none;
 }
 
-/* Theme Toggle Button */
-.theme-toggle {
+/* Animated SVG Buttons */
+.icon-btn {
     background: none;
     border: none;
     color: var(--text-color);
     cursor: pointer;
-    font-size: 1.2rem;
-    padding: 0.5rem;
     border-radius: 50%;
     transition: background 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    width: 36px;
+    height: 36px;
 }
-.theme-toggle:hover {
+
+.icon-btn:hover {
     background: rgba(128, 128, 128, 0.2);
+}
+
+.icon-btn svg {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    transition: all 0.3s ease;
+}
+
+/* Theme Toggle (Sun / Moon) */
+.icon-sun {
+    transform: rotate(0deg) scale(1);
+}
+.icon-moon {
+    transform: rotate(90deg) scale(0);
+}
+
+body.dark-mode .icon-sun {
+    transform: rotate(-90deg) scale(0);
+}
+body.dark-mode .icon-moon {
+    transform: rotate(0deg) scale(1);
+}
+
+/* Style Toggle (Grid / List) */
+.icon-modern {
+    transform: rotate(0deg) scale(1);
+}
+.icon-classic {
+    transform: rotate(90deg) scale(0);
+}
+
+body.classic-view .icon-modern {
+    transform: rotate(-90deg) scale(0);
+}
+body.classic-view .icon-classic {
+    transform: rotate(0deg) scale(1);
 }
 
 /* Responsive */
