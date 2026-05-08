@@ -289,7 +289,7 @@ function processData(csvText) {
             <h2>Přidat nový odkaz</h2>
             <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe6ltPuCF238QgkEJuDXcMuU3PmOZw51qNlx06xUNaI9Wnxkg/viewform?embedded=true" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0" loading="lazy">Načítání…</iframe>
         </div>
-        <div style="text-align: center; margin-top: 1rem;">
+        <div style="position: absolute; opacity: 0; pointer-events: none;">
             <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fsimbba98.github.io%2FDUMy_Sokolska%2F&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=N%C3%A1v%C5%A1t%C4%9Bvy&edge_flat=false" alt="Návštěvy">
         </div>
         <p class="footer-text">©2026 Šimon Marák | Vytvořil <a href="https://www.instagram.com/simon_ma.r/" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">Šimon Marák</a></p>
