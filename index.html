@@ -7,7 +7,7 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="styles.css">
     <script>
-        // Intercept clicks immediately to handle scrolling during progressive page load
+        // Intercept clicks immediately to handle scrolling during dynamic rendering
         document.addEventListener('click', function(e) {
             const anchor = e.target.closest('a[href^="#"]');
             if (!anchor) return;
@@ -16,25 +16,37 @@
             
             e.preventDefault();
             const targetId = href.substring(1);
-            const scrollToTarget = () => {
+            let attempts = 0;
+            const maxAttempts = 20; // 2 seconds of tracking (20 * 100ms)
+
+            const performScroll = () => {
                 const el = document.getElementById(targetId);
                 if (el) {
-                    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    // Keep adjusting if the page is still loading (content shifting)
-                    if (document.readyState !== 'complete') {
-                        setTimeout(scrollToTarget, 300);
+                    // Use a slightly more robust scroll method
+                    const topOffset = el.getBoundingClientRect().top + window.pageYOffset - 80; // 80px offset for header
+                    window.scrollTo({
+                        top: topOffset,
+                        behavior: attempts === 0 ? 'smooth' : 'auto' // Smooth first, then snap to keep up
+                    });
+                    
+                    attempts++;
+                    if (attempts < maxAttempts) {
+                        setTimeout(performScroll, 100);
                     }
                     return true;
                 }
                 return false;
             };
             
-            if (!scrollToTarget()) {
-                const timer = setInterval(() => {
-                    if (scrollToTarget() || document.readyState === 'complete') clearInterval(timer);
-                }, 100);
-                setTimeout(() => clearInterval(timer), 10000);
-            }
+            performScroll();
+            // If it didn't find it yet, keep trying until it appears
+            const initialCheck = setInterval(() => {
+                if (document.getElementById(targetId)) {
+                    clearInterval(initialCheck);
+                    performScroll();
+                }
+            }, 50);
+            setTimeout(() => clearInterval(initialCheck), 5000);
         }, true);
     </script>
     <script src="materials.js" defer></script>

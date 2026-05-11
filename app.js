@@ -1,10 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Render Materials from data
+    // 1. Render Materials immediately
     renderMaterials();
 
-    // 2. Search functionality
     const searchInput = document.getElementById('searchInput');
-    // Get cards AFTER rendering
+    // Get cards AFTER rendering is done
     const cards = document.querySelectorAll('.card');
 
     if (searchInput) {
