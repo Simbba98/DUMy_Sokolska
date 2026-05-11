@@ -1,6 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Search functionality
+    // 1. Render Materials from data
+    renderMaterials();
+
+    // 2. Search functionality
     const searchInput = document.getElementById('searchInput');
+    // Get cards AFTER rendering
     const cards = document.querySelectorAll('.card');
 
     if (searchInput) {
@@ -102,4 +106,39 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('welcomeShown', 'true');
     }
 
+    function renderMaterials() {
+        const container = document.getElementById('materials-container');
+        if (!container || typeof materialsData === 'undefined') return;
+
+        let html = '';
+        materialsData.forEach(category => {
+            html += `
+            <section id="${category.id}" class="category-section">
+                <h2 class="category-title">${category.title}</h2>
+                <div class="category-content">
+                    ${category.subcategories.map(sub => `
+                    <div class="subcategory-group">
+                        <h3 class="subcategory-title">${sub.title}</h3>
+                        <div class="grid-container">
+                            ${sub.items.map(item => `
+                            <div class="card" data-search-text="${item.searchText.toLowerCase()}">
+                                <h3 class="card-title">${item.title}</h3>
+                                <p class="card-subtitle">${item.subtitle}</p>
+                                <div style="margin-top: auto;">
+                                    <a class="card-link" href="${item.link}" target="_blank" rel="noopener noreferrer">
+                                        <span class="modern-link-text">Zobrazit materiál</span>
+                                        <span class="classic-link-text">${item.classicLinkText}</span>
+                                    </a>
+                                </div>
+                            </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                    `).join('')}
+                </div>
+            </section>
+            `;
+        });
+        container.innerHTML = html;
+    }
 });
