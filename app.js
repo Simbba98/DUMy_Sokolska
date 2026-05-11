@@ -102,16 +102,39 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('welcomeShown', 'true');
     }
 
-    // Smooth scroll for nav links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
+    // Robust smooth scroll for nav links
+    document.addEventListener('click', function (e) {
+        const anchor = e.target.closest('a[href^="#"]');
+        if (!anchor) return;
+        
+        const href = anchor.getAttribute('href');
+        if (!href || href === '#' || href.startsWith('##')) return;
+
+        const target = document.querySelector(href);
+        if (target) {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
+            
+            const scrollToTarget = () => {
                 target.scrollIntoView({
-                    behavior: 'smooth'
+                    behavior: 'smooth',
+                    block: 'start'
                 });
+            };
+
+            scrollToTarget();
+
+            // If the page is still loading, content might shift or body height might be restricted.
+            // We keep trying to scroll as the page loads to ensure we reach the final destination.
+            if (document.readyState !== 'complete') {
+                const scrollInterval = setInterval(() => {
+                    scrollToTarget();
+                    if (document.readyState === 'complete') {
+                        clearInterval(scrollInterval);
+                    }
+                }, 200);
+                // Stop trying after 5 seconds
+                setTimeout(() => clearInterval(scrollInterval), 5000);
             }
-        });
+        }
     });
 });
