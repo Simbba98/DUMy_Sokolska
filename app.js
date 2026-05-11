@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
         searchInput.addEventListener('input', (e) => {
             const searchTerm = e.target.value.toLowerCase();
             
+            // Scroll to top when searching
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            
             cards.forEach(card => {
                 const text = card.getAttribute('data-search-text') || '';
                 if (text.includes(searchTerm)) {
