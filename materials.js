@@ -6441,6 +6441,20 @@ const materialsData = [
             "searchText": "sps 4.pdf skripta sps 4",
             "link": "https://drive.google.com/file/d/1IoIP0nN6BewPu7LWJK3CX6MavgjmeFHy/preview",
             "classicLinkText": "SPS 4"
+          },
+          {
+            "title": "Maturitní otázky SPS 2026",
+            "subtitle": "MAT_OT_SPS_2026",
+            "searchText": "mat_ot_sps_2026 maturitní otázky sps 2026",
+            "link": "https://drive.google.com/file/d/1uccl7LqPtg3YudBkJfHdk-LSu-Dlkeec/preview",
+            "classicLinkText": "MAT_OT_SPS_2026"
+          },
+          {
+            "title": "Maturitní otázky STT 2026",
+            "subtitle": "MAT_OT_STT_2026",
+            "searchText": "mat_ot_stt_2026 maturitní otázky stt 2026",
+            "link": "https://drive.google.com/file/d/1cfmDIzJ3T4IgMthcDd-O5FtZOfN57gtN/preview",
+            "classicLinkText": "MAT_OT_STT_2026"
           }
         ]
       }
