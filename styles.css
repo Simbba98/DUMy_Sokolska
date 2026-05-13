@@ -409,9 +409,18 @@ body.classic-view .footer-content h2 {
     color: #000;
 }
 
+body.classic-view.dark-mode .footer-content h2 {
+    color: #fff;
+}
+
 body.classic-view nav a,
 body.classic-view .icon-btn {
     color: #000;
+}
+
+body.classic-view.dark-mode nav a,
+body.classic-view.dark-mode .icon-btn {
+    color: #fff;
 }
 
 /* body.classic-view #themeToggle {
@@ -564,6 +573,53 @@ body.classic-view .attachment-link:hover {
     background: #f5f5f5;
     color: #1E90ff;
     text-decoration: none;
+}
+
+/* Classic View Dark Mode Overrides */
+body.classic-view.dark-mode {
+    background: #121212;
+    color: #e0e0e0;
+}
+
+body.classic-view.dark-mode .glass-header,
+body.classic-view.dark-mode .glass-footer {
+    background: #1a1a1a;
+    border-bottom: 1px ridge #4169E1;
+}
+
+body.classic-view.dark-mode .container {
+    background: #1e1e1e;
+    border-color: #4169E1;
+}
+
+body.classic-view.dark-mode .category-section {
+    background: #242424;
+    border-color: #4169E1;
+}
+
+body.classic-view.dark-mode .category-title {
+    background: #0056b3;
+    color: #ffffff;
+    border-color: #1e90ff;
+}
+
+body.classic-view.dark-mode .subcategory-title {
+    color: #d1d1d1;
+}
+
+body.classic-view.dark-mode .card-title {
+    color: #d1d1d1;
+}
+
+body.classic-view.dark-mode .card-link,
+body.classic-view.dark-mode .attachment-link {
+    color: #87CEFA;
+}
+
+body.classic-view.dark-mode .card-link:hover,
+body.classic-view.dark-mode .attachment-link:hover {
+    background: #2a2a2a;
+    color: #ADD8E6;
 }
 
 /* Animated SVG Buttons */
