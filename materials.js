@@ -2745,9 +2745,9 @@ const materialsData = [
             "classicLinkText": "VY_32_INOVACE_10-08"
           },
           {
-            "title": "Ur��ení výslednice sil bez společného působiště",
+            "title": "Určení výslednice sil bez společného působiště",
             "subtitle": "VY_32_INOVACE_10-09.pdf",
-            "searchText": "vy_32_inovace_10-09.pdf ur��ení výslednice sil bez společného působiště",
+            "searchText": "vy_32_inovace_10-09.pdf určení výslednice sil bez společného působiště",
             "link": "https://drive.google.com/file/d/10xki6XR0mlyG-6nRrt2efGb1kQ-a8yKC/preview",
             "classicLinkText": "VY_32_INOVACE_10-09"
           },
@@ -5536,9 +5536,9 @@ const materialsData = [
             "classicLinkText": "VY_32_INOVACE_33-17"
           },
           {
-            "title": "MS Excel - budouc�� hodnota, platba, úroková míra",
+            "title": "MS Excel - budoucí hodnota, platba, úroková míra",
             "subtitle": "VY_32_INOVACE_33-18.pdf",
-            "searchText": "vy_32_inovace_33-18.pdf ms excel - budouc�� hodnota, platba, úroková míra",
+            "searchText": "vy_32_inovace_33-18.pdf ms excel - budoucí hodnota, platba, úroková míra",
             "link": "https://drive.google.com/file/d/1LBDCDZl2ytYWUUKx6ebhszbkKLGLfc1V/preview",
             "classicLinkText": "VY_32_INOVACE_33-18"
           },
