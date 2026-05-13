@@ -74,6 +74,9 @@ document.addEventListener('DOMContentLoaded', () => {
             let style = "modern";
             if (document.body.classList.contains("classic-view")) {
                 style = "classic";
+                // Automatically switch to light mode when entering classic view
+                document.body.classList.remove("dark-mode");
+                localStorage.setItem("theme", "light");
             }
             localStorage.setItem("viewStyle", style);
         });
@@ -90,6 +93,9 @@ document.addEventListener('DOMContentLoaded', () => {
         btnClassic.addEventListener('click', () => {
             document.body.classList.add('classic-view');
             localStorage.setItem("viewStyle", "classic");
+            // Automatically switch to light mode when entering classic view
+            document.body.classList.remove("dark-mode");
+            localStorage.setItem("theme", "light");
             closeModal();
         });
 
